@@ -1,6 +1,7 @@
+using CONSULTORIODONTOLOGICO.BD.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-using PACIENTES.BD.Data.Entidades;
+// using PACIENTES.BD.Data.Entidades;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-var conn = builder.Configuration.GetConnectionString("con");
+var conn = builder.Configuration.GetConnectionString("conn");
 
 builder.Services.AddDbContext<BDContext>(opciones =>
 
