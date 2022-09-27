@@ -10,16 +10,27 @@ namespace CONSULTORIODONTOLOGICO.BD.Data
 {
     public class BDContext : DbContext
     {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            foreach ( /// Desactiva la eliminacion en cascada de todas las relaciones
+                var relationship in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+        }
         // Paciente: carga de cada registro //Pacientes:tabla
         public DbSet<Paciente> Pacientes { get; set; }
         //constructor: parandome arriba de BDContext y ctrl+., seleccionar opcion "generar constructor con options"
         //DbContextOptions "opcions" agarra los parámetros "options" de la 'base' heredada
-
+        public DbSet<ObraSocial> ObrasSociales { get; set; }
+        
         public BDContext(DbContextOptions options) : base(options)
         {
         }
-            
         
+
     }
 
 
