@@ -14,7 +14,7 @@ namespace CONSULTORIODONTOLOGICO.BD.Data.Entidades
         public int Id { get; set; } 
 
         [Required]
-        public string Nombre { get; set; }
+        public string NombreObraSocial { get; set; }
 
         [Required]
         public string Apellido { get; set; }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CONSULTORIODONTOLOGICO.BD.Migrations
 {
-    [DbContext(typeof(BDContext))]
+    [DbContext(typeof(DBContext))]
     [Migration("20220926231504_inicio")]
     partial class inicio
     {

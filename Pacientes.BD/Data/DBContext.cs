@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CONSULTORIODONTOLOGICO.BD.Data
 {
-    public class BDContext : DbContext
+    public class DBContext : DbContext
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,7 @@ namespace CONSULTORIODONTOLOGICO.BD.Data
         //DbContextOptions "opcions" agarra los parámetros "options" de la 'base' heredada
         public DbSet<ObraSocial> ObrasSociales { get; set; }
         
-        public BDContext(DbContextOptions options) : base(options)
+        public DBContext(DbContextOptions options) : base(options)
         {
         }
         
